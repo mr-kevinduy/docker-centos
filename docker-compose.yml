@@ -1,0 +1,7 @@
+services:
+  centos:
+    image: centos:7
+    tty: true
+    restart: always
+    volumes:
+      - ./:/var/www/app

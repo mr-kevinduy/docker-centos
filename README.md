@@ -3,12 +3,21 @@ Docker for centos
 
 `docker pull kevinduy/centos`
 
+Refs:
+https://github.com/gdraheim/docker-systemctl-replacement/blob/master/test-centos7-lamp-stack.dockerfile
+
 # 1. Main
 
 - kevinduy/centos:7 (kevinduy/centos:latest)
-- kevinduy/centos:6
 
-# 2. Docker-compose
+# 2. Development
+
+```sh
+# Get IP
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_id
+```
+
+# 3. Setup
 
 - __docker-compose.yml__:
 
@@ -49,14 +58,9 @@ git commit -m "centos 7"
 git push origin centos7
 ```
 
-# 3. Changelog
+# 4. Changelog
 
 ### [kevinduy/centos:7 | kevinduy/centos:latest]
 - centos7
 - service, systemd
-- python
-
-### [kevinduy/centos:6]
-- centos6
-- service, systemd
-- python
+- Python 2.7.5, Python 3.6.8
