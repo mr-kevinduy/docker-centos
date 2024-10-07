@@ -26,6 +26,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 ADD install.sh /install.sh
 
+RUN sed -i $'s/\r$//' /*.sh
 RUN chmod +x /*.sh
 
 RUN /install.sh
